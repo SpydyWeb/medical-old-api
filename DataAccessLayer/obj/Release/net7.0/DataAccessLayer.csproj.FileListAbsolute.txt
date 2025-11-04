@@ -1,0 +1,30 @@
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\DataAccessLayer.deps.json
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\DataAccessLayer.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\DataAccessLayer.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\CORE.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\CORE.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.csproj.AssemblyReference.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.AssemblyInfo.cs
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.csproj.CopyComplete
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\refint\DataAccessLayer.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\ref\DataAccessLayer.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\DataAccessLayer.deps.json
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\DataAccessLayer.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\DataAccessLayer.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\CORE.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\bin\Release\net7.0\CORE.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.csproj.AssemblyReference.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.AssemblyInfoInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.AssemblyInfo.cs
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.csproj.CopyComplete
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\refint\DataAccessLayer.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\DataAccessLayer.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\DataAccessLayer\obj\Release\net7.0\ref\DataAccessLayer.dll

@@ -1,0 +1,34 @@
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\bin\Release\net7.0\Repository.deps.json
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\bin\Release\net7.0\Repository.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\bin\Release\net7.0\Repository.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\bin\Release\net7.0\Domain.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\bin\Release\net7.0\SharedDomain.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\bin\Release\net7.0\Domain.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\bin\Release\net7.0\SharedDomain.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.csproj.AssemblyReference.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.AssemblyInfoInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.AssemblyInfo.cs
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.csproj.CoreCompileInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.csproj.CopyComplete
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\refint\Repository.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\Repository\obj\Release\net7.0\ref\Repository.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\bin\Release\net7.0\Repository.deps.json
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\bin\Release\net7.0\Repository.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\bin\Release\net7.0\Repository.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\bin\Release\net7.0\Domain.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\bin\Release\net7.0\SharedDomain.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\bin\Release\net7.0\Domain.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\bin\Release\net7.0\SharedDomain.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.csproj.AssemblyReference.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.AssemblyInfoInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.AssemblyInfo.cs
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.csproj.CoreCompileInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.csproj.CopyComplete
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\refint\Repository.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\Repository.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\Repository\obj\Release\net7.0\ref\Repository.dll

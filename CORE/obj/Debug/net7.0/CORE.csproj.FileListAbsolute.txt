@@ -1,0 +1,24 @@
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\bin\Debug\net7.0\CORE.deps.json
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\bin\Debug\net7.0\CORE.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\bin\Debug\net7.0\CORE.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.csproj.AssemblyReference.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.GeneratedMSBuildEditorConfig.editorconfig
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.AssemblyInfoInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.AssemblyInfo.cs
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.csproj.CoreCompileInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\refint\CORE.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\CORE\obj\Debug\net7.0\ref\CORE.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\bin\Debug\net7.0\CORE.deps.json
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\bin\Debug\net7.0\CORE.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\bin\Debug\net7.0\CORE.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.csproj.AssemblyReference.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.GeneratedMSBuildEditorConfig.editorconfig
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.AssemblyInfoInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.AssemblyInfo.cs
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.csproj.CoreCompileInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\refint\CORE.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\CORE.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\CORE\obj\Debug\net7.0\ref\CORE.dll

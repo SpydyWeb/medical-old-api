@@ -1,0 +1,24 @@
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\bin\Debug\net7.0\SharedDomain.deps.json
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\bin\Debug\net7.0\SharedDomain.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\bin\Debug\net7.0\SharedDomain.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.csproj.AssemblyReference.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.GeneratedMSBuildEditorConfig.editorconfig
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.AssemblyInfoInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.AssemblyInfo.cs
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.csproj.CoreCompileInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\refint\SharedDomain.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\ref\SharedDomain.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\bin\Debug\net7.0\SharedDomain.deps.json
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\bin\Debug\net7.0\SharedDomain.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\bin\Debug\net7.0\SharedDomain.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.csproj.AssemblyReference.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.GeneratedMSBuildEditorConfig.editorconfig
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.AssemblyInfoInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.AssemblyInfo.cs
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.csproj.CoreCompileInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\refint\SharedDomain.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\SharedDomain.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\SharedDomain\obj\Debug\net7.0\ref\SharedDomain.dll

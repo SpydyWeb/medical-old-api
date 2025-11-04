@@ -1,0 +1,34 @@
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\InfraStructure.deps.json
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\InfraStructure.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\InfraStructure.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\CORE.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\DataAccessLayer.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\CORE.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\DataAccessLayer.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.csproj.AssemblyReference.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.AssemblyInfoInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.AssemblyInfo.cs
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.csproj.CoreCompileInputs.cache
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.csproj.CopyComplete
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\refint\InfraStructure.dll
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.pdb
+D:\AJT1128\AJT_Projects\SourceCode\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\ref\InfraStructure.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\InfraStructure.deps.json
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\InfraStructure.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\InfraStructure.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\CORE.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\DataAccessLayer.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\CORE.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\bin\Release\net7.0\DataAccessLayer.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.csproj.AssemblyReference.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.AssemblyInfoInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.AssemblyInfo.cs
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.csproj.CoreCompileInputs.cache
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.csproj.CopyComplete
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\refint\InfraStructure.dll
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\InfraStructure.pdb
+E:\SME SourceCode\SME_API_ReGenerated\SME_API_ReGenerated\InfraStructure\obj\Release\net7.0\ref\InfraStructure.dll

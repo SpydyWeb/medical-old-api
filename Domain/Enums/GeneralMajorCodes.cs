@@ -1,0 +1,42 @@
+namespace Domain.Enums
+{
+	public enum GeneralMajorCodes
+	{
+		VehicleCategory = 1,
+		VehicleMake = 2,
+		VehicleType = 3,
+		VehicleUsage = 4,
+		Zones = 5,
+		RepairCondtions = 6,
+		BusinessChannel = 7,
+		Conveyance = 8,
+		MarineClause = 9,
+		TravelPolicyDurations = 10,
+		VesselUse = 26,
+		VesselClass = 12,
+		VesselMaterial = 13,
+		PackingType = 14,
+		SailLocation = 15,
+		AviationUsage = 16,
+		AviationMake = 17,
+		AviationModel = 18,
+		IATATypeCode = 19,
+		PioltTypeRating = 20,
+		PackagingTYpe = 23,
+		ReassignmentReason = 29,
+		ClaimSubStatus = 30,
+		VehicleBody = 31,
+		VehicleColor = 32,
+		DriverLicenceType = 34,
+		Classification = 39,
+		ConstructionClass = 57,
+		ClaimTaskNature = 82,
+		plateFormat = 83,
+		StockType = 74,
+		UseOfAnimal = 75,
+		RearingMethod = 76,
+		BuildingMaterial = 77,
+		OrdersActions = 40,
+		BusinessType = 84
+	}
+}

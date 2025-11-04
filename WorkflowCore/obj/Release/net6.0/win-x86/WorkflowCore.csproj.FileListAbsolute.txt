@@ -1,0 +1,12 @@
+C:\Users\spydy\source\repos\WorkflowCore\bin\Release\net6.0\win-x86\WorkflowCore.deps.json
+C:\Users\spydy\source\repos\WorkflowCore\bin\Release\net6.0\win-x86\WorkflowCore.dll
+C:\Users\spydy\source\repos\WorkflowCore\bin\Release\net6.0\win-x86\WorkflowCore.pdb
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\WorkflowCore.csproj.AssemblyReference.cache
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\WorkflowCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\WorkflowCore.AssemblyInfoInputs.cache
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\WorkflowCore.AssemblyInfo.cs
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\WorkflowCore.csproj.CoreCompileInputs.cache
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\WorkflowCore.dll
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\refint\WorkflowCore.dll
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\WorkflowCore.pdb
+C:\Users\spydy\source\repos\WorkflowCore\obj\Release\net6.0\win-x86\ref\WorkflowCore.dll

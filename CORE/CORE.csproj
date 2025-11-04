@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\AJT\PartnerPortal\Portal02Feb2024\Portal\SME_API_ReGenerated\SME_API_ReGenerated\CORE\DTOs\APIs\Process\Approvals\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\AJT\PartnerPortal\Portal02Feb2024\Portal\SME_API_ReGenerated\SME_API_ReGenerated\CORE\DTOs\APIs\Process\Approvals\.editorconfig" />
+  </ItemGroup>
+
+</Project>
