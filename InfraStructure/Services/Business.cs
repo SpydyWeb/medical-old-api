@@ -2173,7 +2173,7 @@ namespace InfraStructure.Services
                 {
                     bool status = false;
                     List<Production> list = (from x in ((DbContext)(object)context2).Set<Production>()
-                                             where x.PolicyId == (long?)(long)PolicyId && x.EndosmentType == (int?)3
+                                             where (x.Id == PolicyId) || (x.PolicyId == (long?)(long)PolicyId && x.EndosmentType == (int?)3)
                                              select x).ToList();
                     list.ForEach(delegate (Production member)
                     {

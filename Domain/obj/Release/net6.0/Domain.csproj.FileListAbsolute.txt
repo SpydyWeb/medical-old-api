@@ -58,3 +58,19 @@ C:\Users\spydy\source\repos\Domain\obj\Release\net6.0\Domain.dll
 C:\Users\spydy\source\repos\Domain\obj\Release\net6.0\refint\Domain.dll
 C:\Users\spydy\source\repos\Domain\obj\Release\net6.0\Domain.pdb
 C:\Users\spydy\source\repos\Domain\obj\Release\net6.0\ref\Domain.dll
+C:\Users\spydy\source\repos\medical old\Domain\bin\Release\net6.0\Domain.deps.json
+C:\Users\spydy\source\repos\medical old\Domain\bin\Release\net6.0\Domain.dll
+C:\Users\spydy\source\repos\medical old\Domain\bin\Release\net6.0\Domain.pdb
+C:\Users\spydy\source\repos\medical old\Domain\bin\Release\net6.0\SharedDomain.dll
+C:\Users\spydy\source\repos\medical old\Domain\bin\Release\net6.0\SharedDomain.pdb
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.AssemblyInfo.cs
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.sourcelink.json
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.csproj.Up2Date
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.dll
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\refint\Domain.dll
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\Domain.pdb
+C:\Users\spydy\source\repos\medical old\Domain\obj\Release\net6.0\ref\Domain.dll
