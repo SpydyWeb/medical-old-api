@@ -560,6 +560,21 @@ namespace InsuranceAPIs.SMEAPIs
                             },
                         };
                         _process.SetApprovalStatus(approvals);
+                        PaymentLog log = new PaymentLog()
+                        {
+                            CardDetails = bankBody.amount,
+                            CardType = "BANK",
+                            MerchantReference = policyPaymentInput.ReferenceNo,
+                            PayfortId = policyPaymentInput.ReferenceNo,
+                            PayfortStatus = "Success , 14000",
+                            PolicyId = production.Id,
+                            PolicyNo = production.EskaSegment,
+                            ProductName = "Medical",
+                            Status = true,
+                            TransactionDate = DateTime.Now,
+                            TransactionType = 1
+                        };
+                        _process.SavePaymentLog(log);
                     }
                 }
                 else
