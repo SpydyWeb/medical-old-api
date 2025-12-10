@@ -62,7 +62,7 @@ namespace InsuranceAPIs.SMEAPIs
                     if (PolicyHolder != null)
                     {
                         string token = "Bearer " + GenerateToken();
-                        if (!Policies[0].EndosmentType.HasValue)
+                        if (Policies[0].PolicyId==null || Policies[0].PolicyId == 0)
                         {
                             PolicyHeaderRequest policyHeaderRequest = new PolicyHeaderRequest();
                             //new Case                            

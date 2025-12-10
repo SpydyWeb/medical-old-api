@@ -339,7 +339,7 @@ namespace InfraStructure.Services
                 try
                 {
                     return (from p in ((DbContext)(object)context).Set<Production>()
-                            where p.IsPaid == false && p.Id == Id && (Eska ? (p.EskaId == null) : true)
+                            where p.IsPaid == false && p.Id == Id && (Eska ? (p.EskaId == null || p.EskaId==0) : true)
                             select p).ToList();
                 }
                 catch (Exception)

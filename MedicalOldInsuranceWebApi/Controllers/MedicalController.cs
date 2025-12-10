@@ -1927,7 +1927,6 @@ namespace InsuranceAPIs.Controllers
             CORE.DTOs.APIs.Unified_Response.Results Results = new CORE.DTOs.APIs.Unified_Response.Results();
             try
             {
-                Results.status = _svcBusiness.DeletePolicyBusiness(input.PolicyId);
                 if (input.EskaId > 0)
                 {
                     DeletePolicyResponse deletePolicyResponse = new DeletePolicyResponse();
@@ -1936,7 +1935,16 @@ namespace InsuranceAPIs.Controllers
                     {
                         Results.status = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1;
                         Results.message = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1 ? "" : deletePolicyResponse.deletePolicyDataResult.status.reason;
+                        if (deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1)
+                        {
+                            Results.status = _svcBusiness.DeletePolicyBusiness(input.PolicyId);
+
+                        }
                     }
+                }
+                else
+                {
+                    Results.status = _svcBusiness.DeletePolicyBusiness(input.PolicyId);
                 }
                 if (Results.status)
                 {
