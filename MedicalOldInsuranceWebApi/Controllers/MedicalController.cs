@@ -252,6 +252,30 @@ namespace InsuranceAPIs.Controllers
             return loadMemberTrees;
         }
 
+        [HttpPost]
+        [Route("LoadMemberTreeByPolicyid")]
+        public MembersInformations LoadMemberTreeByPolicyid(PolicyIdInput policyIdInput)
+        {
+            MembersInformations loadMemberTrees = new MembersInformations();
+            List<MembersList> Members = _svcBusiness.LoadMemberTreeByPolicyid(policyIdInput.PolicyId);
+            if (Members != null && Members.Count > 0)
+            {
+                loadMemberTrees.Members = Members;
+                loadMemberTrees.status = true;
+                loadMemberTrees.ResponseDate = DateTime.Now;
+                loadMemberTrees.httpStatusCode = HttpStatusCode.OK;
+                loadMemberTrees.message = "";
+            }
+            else
+            {
+                loadMemberTrees.status = false;
+                loadMemberTrees.ResponseDate = DateTime.Now;
+                loadMemberTrees.httpStatusCode = HttpStatusCode.NoContent;
+                loadMemberTrees.message = "No Content";
+            }
+            return loadMemberTrees;
+        }
+
         [HttpGet]
         [Route("SearchMemberTree")]
         public MembersInformations SearchMemberTree([FromQuery] string obj)

@@ -339,7 +339,7 @@ namespace InfraStructure.Services
                 try
                 {
                     return (from p in ((DbContext)(object)context).Set<Production>()
-                            where p.IsPaid == false && p.Id == Id && (Eska ? (p.EskaId == null || p.EskaId==0) : true)
+                            where p.IsPaid == false && p.Id == Id && (Eska ? (p.EskaId == null || p.EskaId == 0) : true)
                             select p).ToList();
                 }
                 catch (Exception)
@@ -756,8 +756,8 @@ namespace InfraStructure.Services
                                                    select p).FirstOrDefault();
                     policyHolders.VatNumber = updateFinancial2.VAT;
                     policyHolders.IBAN = updateFinancial2.IBAN;
-                    policyHolders.BankNameAr= updateFinancial2.BankNameAr;
-                    policyHolders.BankNameEn= updateFinancial2.BankNameEn;
+                    policyHolders.BankNameAr = updateFinancial2.BankNameAr;
+                    policyHolders.BankNameEn = updateFinancial2.BankNameEn;
                     ((DbContext)(object)context).Set<PolicyHolders>().Update(policyHolders);
                     ((DbContext)(object)context).SaveChanges();
                     return true;
@@ -1145,6 +1145,44 @@ namespace InfraStructure.Services
                         }
                         members.Add(membersList2);
                     });
+
+                    return members;
+                }
+                catch (Exception)
+                {
+                    return (List<MembersList>)null;
+                }
+            });
+        }
+        public List<MembersList> LoadMemberTreeByPolicyid(long policyid)
+        {
+            List<MembersList> members = new List<MembersList>();
+            List<string> dep = new List<string>();
+            return Action(delegate (DataBaseContext context)
+            {
+                DataBaseContext context2 = context;
+                try
+                {
+
+                    var memberslist = (from s in ((DbContext)(object)context).Set<Subjects>()
+                                       where s.PolicyId == policyid
+                                       select s).ToList();
+                    memberslist.ForEach(delegate (Subjects member)
+                  {
+                      MembersList membersList2 = new MembersList();
+                      membersList2.Member = new Subjects();
+                      membersList2.Dependent = new List<Subjects>();
+                      List<Subjects> list3 = (from v in ((DbContext)(object)context2).Set<Subjects>()
+                                              where v.Princible == member.NationalId && v.PolicyId == member.PolicyId
+                                              select v).ToList();
+                      membersList2.Member = member;
+                      if (list3 != null && list3.Count > 0)
+                      {
+                          membersList2.Dependent.AddRange(list3);
+
+                      }
+                      members.Add(membersList2);
+                  });
 
                     return members;
                 }

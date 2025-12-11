@@ -97,8 +97,8 @@ namespace InsuranceAPIs.SMEAPIs
                             else
                             {
                                 policyHeaderResponse = policyHeaderResponses[0];
-                                Policies[0].EskaId = !Policies[0].EndosmentType.HasValue ? policyHeaderResponses[0].policyInfo.policyId : policyHeaderResponses[0].policyEndoInfo.policyId;
-                                Policies[0].EskaSegment = !Policies[0].EndosmentType.HasValue ? policyHeaderResponses[0].policyInfo.sEGMENT_CODE : policyHeaderResponses[0].policyEndoInfo.sEGMENT_CODE;
+                                Policies[0].EskaId = policyHeaderResponses[0].policyInfo.sEGMENT_CODE==null ? null: policyHeaderResponses[0].policyEndoInfo.policyId;
+                                Policies[0].EskaSegment = policyHeaderResponses[0].policyInfo.sEGMENT_CODE == null ? null: policyHeaderResponses[0].policyEndoInfo.sEGMENT_CODE;
                                 _Business.InsertUpdateProduction(Policies[0]);
                             }
                             //else

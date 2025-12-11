@@ -50,6 +50,7 @@ namespace CORE.Interfaces
 
 		List<MembersList> LoadMemberTree(int PolicyId, string princible, string NationalId);
 		List<MembersList> LoadMemberTreeByCRno(string princible);
+		List<MembersList> LoadMemberTreeByPolicyid(long policyid);
 
         (List<Subjects>, string) InsertUpdateMembers(List<Subjects> members, string connection);
 
