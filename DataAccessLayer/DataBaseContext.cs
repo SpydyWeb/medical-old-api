@@ -1,5 +1,7 @@
+using CORE.TablesObjects;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace DataAccessLayer
 {
@@ -9,14 +11,22 @@ namespace DataAccessLayer
 			: base(option)
 		{
 		}
-
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-		}
-
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+            
+        }
+        //public virtual DbSet<PentaDetail> PentaDetails { get; set; }
+         //public virtual DbSet<PentaDetail> PentaDetails { get; set; } = null!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.UserModelBuilder();
+            //modelBuilder.Entity<PentaDetail>(entity =>
+            //{
+            //    entity.HasKey(e => e.Id);
+            //    entity.ToTable("PentaDetails", "dbo");
+            //});
+
+            modelBuilder.UserModelBuilder();
 			base.OnModelCreating(modelBuilder);
 		}
 	}

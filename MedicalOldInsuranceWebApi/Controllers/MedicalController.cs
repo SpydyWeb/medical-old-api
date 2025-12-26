@@ -12,8 +12,11 @@ using CORE.Interfaces;
 using CORE.TablesObjects;
 using DataAccessLayer.Oracle.Eskadenia.Issuance;
 using DataAccessLayer.Oracle.Eskadenia.Setups;
+using DataAccessLayer.Oracle.StaticDetails;
+using Domain.Models;
 using Endoresement;
 using EskaPolicies;
+using InfraStructure.Services;
 using InsuranceAPIs.Extension;
 using InsuranceAPIs.GovernmentAPIs.CCHI;
 using InsuranceAPIs.Logger;
@@ -25,9 +28,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Service.Interfaces;
+using ServiceReference1;
 using System.Net;
 using System.Net.Http.Headers;
 using System.ServiceModel;
+using Policy = CORE.DTOs.APIs.Business.Policy;
 
 namespace InsuranceAPIs.Controllers
 {
@@ -49,6 +54,7 @@ namespace InsuranceAPIs.Controllers
 
         private readonly IProcess _process;
         private readonly IUserManagment _User;
+        public readonly IConfiguration configuration;
 
         public MedicalController(IOptions<AppSettings> appSettings, IWebHostEnvironment environment, IBusiness svcBus, ITracker tracker, IWSCoreService wSCoreService, IProcess process, IUserManagment user)
         {
@@ -234,30 +240,6 @@ namespace InsuranceAPIs.Controllers
         {
             MembersInformations loadMemberTrees = new MembersInformations();
             List<MembersList> Members = _svcBusiness.LoadMemberTreeByCRno(checkSponsorInput.Sponsor);
-            if (Members != null && Members.Count > 0)
-            {
-                loadMemberTrees.Members = Members;
-                loadMemberTrees.status = true;
-                loadMemberTrees.ResponseDate = DateTime.Now;
-                loadMemberTrees.httpStatusCode = HttpStatusCode.OK;
-                loadMemberTrees.message = "";
-            }
-            else
-            {
-                loadMemberTrees.status = false;
-                loadMemberTrees.ResponseDate = DateTime.Now;
-                loadMemberTrees.httpStatusCode = HttpStatusCode.NoContent;
-                loadMemberTrees.message = "No Content";
-            }
-            return loadMemberTrees;
-        }
-
-        [HttpPost]
-        [Route("LoadMemberTreeByPolicyid")]
-        public MembersInformations LoadMemberTreeByPolicyid(PolicyIdInput policyIdInput)
-        {
-            MembersInformations loadMemberTrees = new MembersInformations();
-            List<MembersList> Members = _svcBusiness.LoadMemberTreeByPolicyid(policyIdInput.PolicyId);
             if (Members != null && Members.Count > 0)
             {
                 loadMemberTrees.Members = Members;
@@ -1229,7 +1211,7 @@ namespace InsuranceAPIs.Controllers
         public CORE.DTOs.APIs.Unified_Response.Results PosToFinance(PolicyPaymentInput input)
         {
             CORE.DTOs.APIs.Unified_Response.Results results = new CORE.DTOs.APIs.Unified_Response.Results();
-            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User);
+            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
             FinalSaveResponse finalSaveResponse = new FinalSaveResponse();
             try
             {
@@ -1350,7 +1332,7 @@ namespace InsuranceAPIs.Controllers
         public CORE.DTOs.APIs.Unified_Response.Results PosToFinanceSME(PolicyPaymentInput input)
         {
             CORE.DTOs.APIs.Unified_Response.Results results = new CORE.DTOs.APIs.Unified_Response.Results();
-            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User);
+            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
             FinalSaveResponse finalSaveResponse = new FinalSaveResponse();
             try
             {
@@ -1388,7 +1370,7 @@ namespace InsuranceAPIs.Controllers
         public CORE.DTOs.APIs.Unified_Response.Results PosToFinanceBankSME(PolicyBankPaymentInput input)
         {
             CORE.DTOs.APIs.Unified_Response.Results results = new CORE.DTOs.APIs.Unified_Response.Results();
-            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User);
+            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
             FinalSaveResponse finalSaveResponse = new FinalSaveResponse();
             try
             {
@@ -1434,7 +1416,7 @@ namespace InsuranceAPIs.Controllers
         public CORE.DTOs.APIs.Unified_Response.Results PosToFinancePayfortSME(PolicyBankPaymentInput input)
         {
             CORE.DTOs.APIs.Unified_Response.Results results = new CORE.DTOs.APIs.Unified_Response.Results();
-            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User);
+            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
             FinalSaveResponse finalSaveResponse = new FinalSaveResponse();
             try
             {
@@ -1769,7 +1751,7 @@ namespace InsuranceAPIs.Controllers
             PolicyHeaderResponse policyHeaderResponse = new PolicyHeaderResponse();
             try
             {
-                SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User);
+                SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
                 policyHeaderResponse = sMECoreServices.CreatePolicyHeader(obj.Id);
                 if (policyHeaderResponse != null && policyHeaderResponse.statusCT.statusCode == 200)
                 {
@@ -1947,10 +1929,11 @@ namespace InsuranceAPIs.Controllers
         [Route("RemovePolicySME")]
         public CORE.DTOs.APIs.Unified_Response.Results RemovePolicySME([FromBody] PolicyIdInput input)
         {
-            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User);
+            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
             CORE.DTOs.APIs.Unified_Response.Results Results = new CORE.DTOs.APIs.Unified_Response.Results();
             try
             {
+                Results.status = _svcBusiness.DeletePolicyBusiness(input.PolicyId);
                 if (input.EskaId > 0)
                 {
                     DeletePolicyResponse deletePolicyResponse = new DeletePolicyResponse();
@@ -1959,16 +1942,7 @@ namespace InsuranceAPIs.Controllers
                     {
                         Results.status = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1;
                         Results.message = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1 ? "" : deletePolicyResponse.deletePolicyDataResult.status.reason;
-                        if (deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1)
-                        {
-                            Results.status = _svcBusiness.DeletePolicyBusiness(input.PolicyId);
-
-                        }
                     }
-                }
-                else
-                {
-                    Results.status = _svcBusiness.DeletePolicyBusiness(input.PolicyId);
                 }
                 if (Results.status)
                 {
@@ -2070,6 +2044,117 @@ namespace InsuranceAPIs.Controllers
                 document.message = "No Content";
             }
             return document;
+        }
+
+
+        [HttpPost]
+        [Route("SyncEskaDataSMEPenta")]
+        public CORE.DTOs.APIs.Unified_Response.Results SyncEskaDataSMEPenta([FromBody] SyncEskaInfo obj)
+        {
+            CORE.DTOs.APIs.Unified_Response.Results result = new CORE.DTOs.APIs.Unified_Response.Results();
+            PolicyHeaderResponse policyHeaderResponse = new PolicyHeaderResponse();
+            try
+            {
+                SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
+                PentaCreateQuotationRes resp = sMECoreServices.CreatePentaQuotation(obj.Id);
+                if (resp != null && resp.status == true)
+                {
+                    result.httpStatusCode = HttpStatusCode.OK;
+                    result.status = true;
+                    result.message = "";
+                    result.ResponseDate = DateTime.Now;
+                }
+                else
+                {
+                    string errorMsg = policyHeaderResponse.statusCT.reason;
+                    if (errorMsg == "Please check member Error")
+                    {
+                        errorMsg = string.Empty;
+                        foreach (var item in policyHeaderResponse.memberInfo)
+                        {
+                            if (item.errorMessage != null)
+                            {
+                                errorMsg += item.nationalId + " " + item.errorMessage + ", ";
+                            }
+                        }
+                    }
+                    result.httpStatusCode = HttpStatusCode.InternalServerError;
+                    result.status = false;
+                    result.message = "SME Error:" + errorMsg;
+                    result.ResponseDate = DateTime.Now;
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.WriteError(ex, obj.Id.ToString(), string.Empty, "SyncEskaDataPenta");
+                result.httpStatusCode = HttpStatusCode.InternalServerError;
+                result.ResponseDate = DateTime.Now;
+                result.status = false;
+                result.message = "failed: " + ex.Message;
+            }
+
+            return result;
+        }
+
+        [HttpPost]
+        [Route("PosToFinanceSMEPenta")]
+        public CORE.DTOs.APIs.Unified_Response.Results PosToFinanceSMEPenta(PolicyPaymentInput input)
+        {
+            CORE.DTOs.APIs.Unified_Response.Results results = new CORE.DTOs.APIs.Unified_Response.Results();
+            SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
+            FinalSaveResponse finalSaveResponse = new FinalSaveResponse();
+            try
+            {
+
+                Production policy = _svcBusiness.getDocumentByKey(input.Key);
+                finalSaveResponse = sMECoreServices.PrepareIssuePolicyRequest(policy, input);
+                if (finalSaveResponse != null && finalSaveResponse.status)
+                {
+                    results.httpStatusCode = HttpStatusCode.OK;
+                    results.ResponseDate = DateTime.Now;
+                    results.status = true;
+                }
+                else
+                {
+                    results.httpStatusCode = HttpStatusCode.InternalServerError;
+                    results.ResponseDate = DateTime.Now;
+                    results.status = false;
+                    results.message = finalSaveResponse.errorMessage;
+
+                }
+                ErrorHandler.WriteLog("PosToFinance", "Execution Completed", JsonConvert.SerializeObject(input), JsonConvert.SerializeObject(finalSaveResponse));
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.WriteError(ex, string.Empty, string.Empty, "WriteLog");
+                results.httpStatusCode = HttpStatusCode.InternalServerError;
+                results.ResponseDate = DateTime.Now;
+                results.status = false;
+                results.message = "Payment method Update Error";
+            }
+            return results;
+        }
+        [HttpPost]
+        [Route("PentaAddition")]
+        public CORE.DTOs.APIs.Unified_Response.Results AdditionPentaEndorsment([FromBody] SyncEskaInfo obj)
+        {
+            CORE.DTOs.APIs.Unified_Response.Results result = new CORE.DTOs.APIs.Unified_Response.Results();
+            PolicyHeaderResponse policyHeaderResponse = new PolicyHeaderResponse();
+            memberAdditionRequest memberAdditionRequest = new memberAdditionRequest();
+            memberAdditionApiResponse objmemberAdditionApiResponse = new memberAdditionApiResponse();
+            FinalSaveResponse finalSaveResponse = new FinalSaveResponse();
+            try
+            {
+                SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
+                finalSaveResponse = sMECoreServices.PrepareAdditionalRequest(obj.Id);
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return result;
         }
     }
 }

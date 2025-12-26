@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.AccessControl;
 using CORE.DTOs.APIs;
 using CORE.DTOs.APIs.Business;
 using CORE.DTOs.APIs.Process.Payments;
@@ -16,8 +17,10 @@ using CORE.TablesObjects;
 using DataAccessLayer;
 using DataAccessLayer.Oracle.Eskadenia.Issuance;
 using DataAccessLayer.Oracle.Eskadenia.Setups;
+using MicroAPIs.Core.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace InfraStructure.Services
 {
@@ -339,7 +342,7 @@ namespace InfraStructure.Services
                 try
                 {
                     return (from p in ((DbContext)(object)context).Set<Production>()
-                            where p.IsPaid == false && p.Id == Id //&& (Eska ? (p.EskaId == null || p.EskaId == 0) : true)
+                            where p.IsPaid == false && p.Id == Id && (Eska ? (p.EskaId == null) : true)
                             select p).ToList();
                 }
                 catch (Exception)
@@ -348,7 +351,22 @@ namespace InfraStructure.Services
                 }
             });
         }
-
+        public List<Production> LoadProductionAddiId(int Id, bool Eska)
+        {
+            return Action(delegate (DataBaseContext context)
+            {
+                try
+                {
+                    return (from p in ((DbContext)(object)context).Set<Production>()
+                            where p.IsPaid == false && p.Id == Id 
+                            select p).ToList();
+                }
+                catch (Exception)
+                {
+                    return (List<Production>)null;
+                }
+            });
+        }
         public List<Policy> LoadPendingForSyncSubject()
         {
             return Action(delegate (DataBaseContext context)
@@ -756,8 +774,8 @@ namespace InfraStructure.Services
                                                    select p).FirstOrDefault();
                     policyHolders.VatNumber = updateFinancial2.VAT;
                     policyHolders.IBAN = updateFinancial2.IBAN;
-                    policyHolders.BankNameAr = updateFinancial2.BankNameAr;
-                    policyHolders.BankNameEn = updateFinancial2.BankNameEn;
+                    policyHolders.BankNameAr= updateFinancial2.BankNameAr;
+                    policyHolders.BankNameEn= updateFinancial2.BankNameEn;
                     ((DbContext)(object)context).Set<PolicyHolders>().Update(policyHolders);
                     ((DbContext)(object)context).SaveChanges();
                     return true;
@@ -1145,44 +1163,6 @@ namespace InfraStructure.Services
                         }
                         members.Add(membersList2);
                     });
-
-                    return members;
-                }
-                catch (Exception)
-                {
-                    return (List<MembersList>)null;
-                }
-            });
-        }
-        public List<MembersList> LoadMemberTreeByPolicyid(long policyid)
-        {
-            List<MembersList> members = new List<MembersList>();
-            List<string> dep = new List<string>();
-            return Action(delegate (DataBaseContext context)
-            {
-                DataBaseContext context2 = context;
-                try
-                {
-
-                    var memberslist = (from s in ((DbContext)(object)context).Set<Subjects>()
-                                       where s.PolicyId == policyid
-                                       select s).ToList();
-                    memberslist.ForEach(delegate (Subjects member)
-                  {
-                      MembersList membersList2 = new MembersList();
-                      membersList2.Member = new Subjects();
-                      membersList2.Dependent = new List<Subjects>();
-                      List<Subjects> list3 = (from v in ((DbContext)(object)context2).Set<Subjects>()
-                                              where v.Princible == member.NationalId && v.PolicyId == member.PolicyId
-                                              select v).ToList();
-                      membersList2.Member = member;
-                      if (list3 != null && list3.Count > 0)
-                      {
-                          membersList2.Dependent.AddRange(list3);
-
-                      }
-                      members.Add(membersList2);
-                  });
 
                     return members;
                 }
@@ -2211,7 +2191,7 @@ namespace InfraStructure.Services
                 {
                     bool status = false;
                     List<Production> list = (from x in ((DbContext)(object)context2).Set<Production>()
-                                             where (x.Id == PolicyId) || (x.PolicyId == (long?)(long)PolicyId && x.EndosmentType == (int?)3)
+                                             where x.PolicyId == (long?)(long)PolicyId && x.EndosmentType == (int?)3
                                              select x).ToList();
                     list.ForEach(delegate (Production member)
                     {
@@ -2404,5 +2384,121 @@ namespace InfraStructure.Services
                                                         where p.CR_NUMBER == CrNumber
                                                         select p).FirstOrDefault());
         }
+
+        public Production UpdateEskaid(int Id, string eskaid)
+        {
+            return Action((DataBaseContext context) =>
+            {
+                var production = context.Set<Production>()
+                    .FirstOrDefault(p => p.Id == Id);
+
+                if (production != null)
+                {
+                    production.SeqmentCode = eskaid;
+                    production.EskaId = Id;
+                    context.SaveChanges();
+                }
+                return production; // or return true/false if needed
+            });
+        }
+        public Production UpdateEskaSegmentCode(string quoteNo, string segmentCode)
+        {
+            return Action((DataBaseContext context) =>
+            {
+                var production = context.Set<Production>()
+                    .FirstOrDefault(p => p.SeqmentCode == quoteNo);
+
+                if (production != null)
+                {
+                    production.EskaSegment = segmentCode;
+                    
+                    context.SaveChanges();
+                }
+                return production; // or return true/false if needed
+            });
+        }
+
+      
+        //    public PentaDetail PentaDeatilsGet(PentaDetail PentaDetails)
+        //    {
+
+        //        return Action((DataBaseContext context) =>
+        //        {
+
+        //            var quoteId = PentaDetails.QuoteId;
+        //            var idNumber = PentaDetails.QuotationNumber;
+
+        //            var existing = context.PentaDetails
+        //                                  .FirstOrDefault(p => p.QuoteId == quoteId
+        //                                                    && p.QuotationNumber == idNumber);
+        //            if (existing != null)
+        //            {
+        //                // Record exists ? update the fields
+        //                existing.SegmentCode = "";
+        //                existing.CreateQuotationReq = PentaDetails.CreateQuotationReq;
+        //                existing.CreateQuotationResp = PentaDetails.CreateQuotationResp;
+        //                existing.IssuePolicyReq = PentaDetails.IssuePolicyReq;
+        //                existing.IssuePolicyResp = PentaDetails.IssuePolicyResp;
+        //                existing.Status = PentaDetails.Status;
+        //                existing.UpdatedDate = DateTime.Now;
+        //                existing.CreatedBy = PentaDetails.CreatedBy; // if you want to update
+        //                existing.QuotationNumber = PentaDetails.QuotationNumber;
+        //                context.PentaDetails.Update(existing);
+        //                context.SaveChanges();
+        //                return existing;
+        //            }
+        //            else
+        //            {
+        //                // Record does not exist ? insert
+        //                context.PentaDetails.Add(PentaDetails);
+        //                context.SaveChanges();
+        //                return existing;
+        //            }
+        //        });
+        //    }
+        //    public string GetQuotationNumber(string segmentCode)
+        //    {
+        //        return Action((DataBaseContext context) =>
+        //        {
+        //            var quoteNo = context.PentaDetails
+        //                                .Where(p => p.QuotationNumber == segmentCode)
+        //                                .Select(p => p.QuotationNumber)
+        //                                .FirstOrDefault();
+        //            return quoteNo;
+        //        });
+
+
+
+        //    }
+        //    public bool IssuePolicyDetails(IssuePolicyRequest issuePolicyRequest, IssuePolicyResponse issuePolicyResponse, string segment)
+        //    {
+        //        return Action((DataBaseContext context) =>
+        //        {
+
+        //            var pentaRecord = context.PentaDetails
+        //                              .FirstOrDefault(p => p.QuotationNumber == issuePolicyRequest.quotationNo);
+        //            if (pentaRecord != null)
+        //            {
+        //                pentaRecord.SegmentCode = segment;   // or your segment source
+        //                pentaRecord.IssuePolicyReq = JsonConvert.SerializeObject(issuePolicyRequest);
+        //                pentaRecord.IssuePolicyResp = JsonConvert.SerializeObject(issuePolicyResponse);
+        //                pentaRecord.UpdatedDate = DateTime.Now;
+        //                pentaRecord.Status = (issuePolicyResponse?.status == true)
+        //                                        ? "Policy Issued"
+        //                                        : "Policy Issue Failed";
+
+        //                context.PentaDetails.Update(pentaRecord);
+        //                context.SaveChanges();
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                context.PentaDetails.Update(pentaRecord);
+        //                context.SaveChanges();
+        //                return true;
+        //            }
+        //        });
+        //    }
+
     }
 }

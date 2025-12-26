@@ -148,10 +148,26 @@ namespace InsuranceAPIs.Models.Configuration_Objects
         public string PayfortWebhookurl { get; set; }
 
 
+        public Pentadetails pentadetails { get; set; }
+
         public AppSettings()
         {
             BasherSetup = new BasherSetup();
             //YakeenAPIConfig = new YakeenAPIConfig();
         }
+
+        public class Pentadetails
+        {
+            public string pentaApiUrl { get; set; }
+            public string lookupUrl { get; set; }
+            public string PentaTokenUrl { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public string endorsmentUrl { get; set; }
+
+        }
+
     }
+
+
 }

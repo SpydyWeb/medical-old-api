@@ -8,7 +8,9 @@ using DataAccessLayer.Oracle.Eskadenia.Setups;
 using Domain.Common;
 using Domain.Context;
 using Domain.Models.DTOs;
+using Fluentx;
 using InfraStructure.Services;
+using InsuranceAPIs.Models;
 using InsuranceAPIs.Models.Configuration_Objects;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -51,6 +53,14 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContextPool<DataBaseContext>
 {
 	options.UseSqlServer(Connection);
 });
+builder.Services.AddDbContext<DataBaseContext>(options =>
+	options.UseSqlServer(Connection));
+
+builder.Services.AddDbContext<testDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDbContext<testDBContext>(options =>
+    options.UseSqlServer(Connection));
 builder.Services.AddDbContext<CchiDbContext>(delegate (DbContextOptionsBuilder options)
 {
 	options.UseOracle(SharedSettings.OracleConnectionString, delegate (OracleDbContextOptionsBuilder b)

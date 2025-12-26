@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using System.Text.Json.Nodes;
 using InsuranceAPIs.Logger;
 using System.Security.Policy;
+using Domain.Models;
 
 namespace InsuranceAPIs.API
 {
@@ -180,6 +181,60 @@ namespace InsuranceAPIs.API
                 ErrorHandler.APIWriteError(ex, apiUrl + apimethod, JsonConvert.SerializeObject(request), apimethod);
                 //throw;
                 return Deserilize<T>("");
+            }
+        }
+
+        public static T ExcutePentaAPI<T>(object requestData, string apiMethod, string apiUrl, string tokenUrl, string username, string password)
+        {
+            try
+            {
+                string token = "";
+                var tokenRequest = new PentaTokenRequest
+                {
+                    username = username,
+                    password = password
+                };
+
+                using (var client = new HttpClient())
+                {
+                    // Get Token
+                    var tokenContent = new StringContent(JsonConvert.SerializeObject(tokenRequest), Encoding.UTF8, "application/json");
+
+                    var tokenResponse = client.PostAsync(tokenUrl, tokenContent).Result;
+                    var tokenResponseBody = tokenResponse.Content.ReadAsStringAsync().Result;
+
+                    if (!tokenResponse.IsSuccessStatusCode)
+                        throw new Exception("Token API failed: " + tokenResponseBody);
+
+                    var tokenObj = JsonConvert.DeserializeObject<PentatokenResponse>(tokenResponseBody);
+                    token = tokenObj?.access_token;
+
+                    if (string.IsNullOrEmpty(token))
+                        throw new Exception("Token is empty");
+
+                    // Main API call
+                    using (var apiClient = new HttpClient())
+                    {
+                        string apiFullUrl = apiUrl + apiMethod;
+
+                        apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                        apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                        var apiContent = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
+
+                        var apiResponse = apiClient.PostAsync(apiFullUrl, apiContent).Result;
+                        var apiResponseBody = apiResponse.Content.ReadAsStringAsync().Result;
+
+                        if (!apiResponse.IsSuccessStatusCode)
+                            throw new Exception("API returned error: " + apiResponseBody);
+
+                        return JsonConvert.DeserializeObject<T>(apiResponseBody);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExcutePentaAPI failed: " + ex.Message, ex);
             }
         }
     }

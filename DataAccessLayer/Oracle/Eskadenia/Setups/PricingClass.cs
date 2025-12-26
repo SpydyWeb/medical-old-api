@@ -182,7 +182,7 @@ namespace DataAccessLayer.Oracle.Eskadenia.Setups
                     objCmd.Parameters.Add("P_ACTIVITYCODE", OracleDbType.Varchar2).Value = 0;
                     objCmd.Parameters.Add("P_AGGREGATORNAME", OracleDbType.Varchar2).Value = "PARTNERPORTAL";
                     objCmd.Parameters.Add("P_CLASS", OracleDbType.Int32).Value = classCode;
-                    //objCmd.Parameters.Add("P_CITY", OracleDbType.NVarchar2).Value = null;
+                    objCmd.Parameters.Add("P_CITY", OracleDbType.NVarchar2).Value = null;
                     objCmd.Parameters.Add("P_NOOFNONSAUDIPRINCMEM", OracleDbType.Int32).Value = P_NOOFNONSAUDIPRINCMEM;
                     objCmd.Parameters.Add("P_NOOFSAUDIPRINCMEM", OracleDbType.Int32).Value = P_NOOFSAUDIPRINCMEM;
                     objCmd.Parameters.Add("P_NOOFSAUDIDEPMEM", OracleDbType.Int32).Value = P_NOOFSAUDIDEPMEM;

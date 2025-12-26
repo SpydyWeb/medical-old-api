@@ -103,6 +103,7 @@ namespace DataAccessLayer
 			modelBuilder.Entity<PricingChannels>().ToTable("PricingChannels").HasKey((PricingChannels p) => p.Id);
             modelBuilder.Entity<OnlineTransactions>().ToTable("OnlineTransactions").HasKey((OnlineTransactions p) => p.Id);
             modelBuilder.Entity<t_Yakeen_AddressInfo>().ToTable("t_Yakeen_AddressInfo").HasKey((t_Yakeen_AddressInfo p) => p.ID);
+            //modelBuilder.Entity<PentaDetail>().ToTable("PentaDetail").HasKey((PentaDetail p) => p.Id);
         }
 	}
 }

@@ -50,7 +50,6 @@ namespace CORE.Interfaces
 
 		List<MembersList> LoadMemberTree(int PolicyId, string princible, string NationalId);
 		List<MembersList> LoadMemberTreeByCRno(string princible);
-		List<MembersList> LoadMemberTreeByPolicyid(long policyid);
 
         (List<Subjects>, string) InsertUpdateMembers(List<Subjects> members, string connection);
 
@@ -130,5 +129,12 @@ namespace CORE.Interfaces
 		Production LoadOriginalPolicy(int customerId);
 		t_Yakeen_AddressInfo GetYakeen_AddressInfo(long CrNumber);
 		Production getDocumentByCrnumber(string Crnumber);
+        Production UpdateEskaid(int Id, string eskaid);
+        Production UpdateEskaSegmentCode(string quoteNo, string segmentCode);
+		List<Production> LoadProductionAddiId(int Id, bool Eska);
+        //PentaDetail PentaDeatilsGet(PentaDetail PentaDetails);
+
+        //string GetQuotationNumber(string segmentCode);
+        //bool IssuePolicyDetails(IssuePolicyRequest issuePolicyRequest, IssuePolicyResponse issuePolicyResponse, string segment);
     }
 }
