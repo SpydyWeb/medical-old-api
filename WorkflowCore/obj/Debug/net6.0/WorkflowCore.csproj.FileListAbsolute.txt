@@ -46,3 +46,16 @@ C:\Users\spydy\source\repos\WorkflowCore\obj\Debug\net6.0\WorkflowCore.dll
 C:\Users\spydy\source\repos\WorkflowCore\obj\Debug\net6.0\refint\WorkflowCore.dll
 C:\Users\spydy\source\repos\WorkflowCore\obj\Debug\net6.0\WorkflowCore.pdb
 C:\Users\spydy\source\repos\WorkflowCore\obj\Debug\net6.0\ref\WorkflowCore.dll
+C:\Users\spydy\source\repos\medical old\WorkflowCore\bin\Debug\net6.0\WorkflowCore.deps.json
+C:\Users\spydy\source\repos\medical old\WorkflowCore\bin\Debug\net6.0\WorkflowCore.dll
+C:\Users\spydy\source\repos\medical old\WorkflowCore\bin\Debug\net6.0\WorkflowCore.pdb
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.csproj.AssemblyReference.cache
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.AssemblyInfoInputs.cache
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.AssemblyInfo.cs
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.csproj.CoreCompileInputs.cache
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.sourcelink.json
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.dll
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\refint\WorkflowCore.dll
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\WorkflowCore.pdb
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Debug\net6.0\ref\WorkflowCore.dll

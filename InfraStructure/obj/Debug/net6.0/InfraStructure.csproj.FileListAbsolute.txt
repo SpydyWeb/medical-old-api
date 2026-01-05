@@ -66,3 +66,21 @@ C:\Users\spydy\source\repos\InfraStructure\obj\Debug\net6.0\InfraStructure.dll
 C:\Users\spydy\source\repos\InfraStructure\obj\Debug\net6.0\refint\InfraStructure.dll
 C:\Users\spydy\source\repos\InfraStructure\obj\Debug\net6.0\InfraStructure.pdb
 C:\Users\spydy\source\repos\InfraStructure\obj\Debug\net6.0\ref\InfraStructure.dll
+C:\Users\spydy\source\repos\medical old\InfraStructure\bin\Debug\net6.0\InfraStructure.deps.json
+C:\Users\spydy\source\repos\medical old\InfraStructure\bin\Debug\net6.0\InfraStructure.dll
+C:\Users\spydy\source\repos\medical old\InfraStructure\bin\Debug\net6.0\InfraStructure.pdb
+C:\Users\spydy\source\repos\medical old\InfraStructure\bin\Debug\net6.0\CORE.dll
+C:\Users\spydy\source\repos\medical old\InfraStructure\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\spydy\source\repos\medical old\InfraStructure\bin\Debug\net6.0\CORE.pdb
+C:\Users\spydy\source\repos\medical old\InfraStructure\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.csproj.AssemblyReference.cache
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.AssemblyInfoInputs.cache
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.AssemblyInfo.cs
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.csproj.CoreCompileInputs.cache
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.sourcelink.json
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStr.570FDCE2.Up2Date
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.dll
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\refint\InfraStructure.dll
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\InfraStructure.pdb
+C:\Users\spydy\source\repos\medical old\InfraStructure\obj\Debug\net6.0\ref\InfraStructure.dll
