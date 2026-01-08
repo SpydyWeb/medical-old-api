@@ -15,6 +15,7 @@ namespace CORE.Interfaces
 		Results SetApprovalStatus(AddToApprovals approvals);
 		Results CheckUserBlackList(string input);
 		Results InsertUserBlacklistMember(string input);
+		Results RemoveUserBlacklistMember(string input);
 
 		bool UpdateApproval(int approvalId, bool? isEmailSent, bool? isSMSSent);
 

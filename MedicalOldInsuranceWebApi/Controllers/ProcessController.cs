@@ -76,6 +76,12 @@ namespace InsuranceAPIs.Controllers
         {
             return _process.InsertUserBlacklistMember(input.Sponsor);
         }
+        [HttpPost]
+        [Route("RemoveUserBlacklistMember")]
+        public CORE.DTOs.APIs.Unified_Response.Results RemoveUserBlacklistMember([FromBody] CheckSponsorInput input)
+        {
+            return _process.RemoveUserBlacklistMember(input.Sponsor);
+        }
 
         [HttpPost]
 		[Route("LoadApprovals")]

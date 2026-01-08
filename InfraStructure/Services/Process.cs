@@ -158,44 +158,51 @@ namespace InfraStructure.Services
                 return results;
             });
 
-        } 
-        public Results InsertUserBlacklistMember(string input)
+        }
+        public Results InsertUserBlacklistMember(string userId)
         {
             Results results = new Results();
-            return Action(delegate (DataBaseContext context)
+
+            return Action(context =>
             {
                 try
                 {
-                    // Check if user already exists in blacklist
-                    bool alreadyExists = context.Set<UserBlockID>()
-                                               .Any(u => u.UserId == input);
+                    var blockedUser = context.Set<UserBlockID>()
+                                             .FirstOrDefault(u => u.UserId == userId);
 
-                    if (alreadyExists)
+                    if (blockedUser != null)
                     {
-                        results.httpStatusCode = HttpStatusCode.Conflict; // 409
-                        results.status = false;
-                        results.ResponseDate = DateTime.Now;
-                        results.message = "User is already blacklisted";
+                        if (blockedUser.IsBlocked)
+                        {
+                            results.httpStatusCode = HttpStatusCode.Conflict;
+                            results.status = false;
+                            results.ResponseDate = DateTime.Now;
+                            results.message = "User is already blacklisted";
+                            return results;
+                        }
+
+                        // Re-block existing user
+                        blockedUser.IsBlocked = true;
+                        blockedUser.CreatedOn = DateTime.Now;
                     }
                     else
                     {
-                        var newBlockedUser = new UserBlockID
+                        // First-time blacklist
+                        context.Set<UserBlockID>().Add(new UserBlockID
                         {
-                            UserId = input,
-                            IsBlocked = true,              // set default block status
-                            CreatedOn = DateTime.Now       // set creation date
-                        };
-
-                        context.Set<UserBlockID>().Add(newBlockedUser);
-                        context.SaveChanges();
-
-                        unitOfWork.SetToBeCommitted();
-
-                        results.httpStatusCode = HttpStatusCode.OK;
-                        results.status = true;
-                        results.ResponseDate = DateTime.Now;
-                        results.message = "User successfully blacklisted";
+                            UserId = userId,
+                            IsBlocked = true,
+                            CreatedOn = DateTime.Now
+                        });
                     }
+
+                    context.SaveChanges();
+                    unitOfWork.SetToBeCommitted();
+
+                    results.httpStatusCode = HttpStatusCode.OK;
+                    results.status = true;
+                    results.ResponseDate = DateTime.Now;
+                    results.message = "User successfully blacklisted";
                 }
                 catch (Exception ex)
                 {
@@ -207,9 +214,52 @@ namespace InfraStructure.Services
 
                 return results;
             });
-
-
         }
+
+        public Results RemoveUserBlacklistMember(string userId)
+        {
+            Results results = new Results();
+
+            return Action(context =>
+            {
+                try
+                {
+                    var blockedUser = context.Set<UserBlockID>()
+                                             .FirstOrDefault(u => u.UserId == userId);
+
+                    if (blockedUser == null)
+                    {
+                        results.httpStatusCode = HttpStatusCode.NotFound; // 404
+                        results.status = false;
+                        results.ResponseDate = DateTime.Now;
+                        results.message = "User is not blacklisted";
+                        return results;
+                    }
+
+                    // Unblock instead of delete (safer)
+                    blockedUser.IsBlocked = false;
+                    //blockedUser.CreatedOn = DateTime.Now;
+
+                    context.SaveChanges();
+                    unitOfWork.SetToBeCommitted();
+
+                    results.httpStatusCode = HttpStatusCode.OK;
+                    results.status = true;
+                    results.ResponseDate = DateTime.Now;
+                    results.message = "User removed from blacklist successfully";
+                }
+                catch (Exception ex)
+                {
+                    results.httpStatusCode = HttpStatusCode.InternalServerError;
+                    results.status = false;
+                    results.ResponseDate = DateTime.Now;
+                    results.message = ex.Message;
+                }
+
+                return results;
+            });
+        }
+
 
         public bool UpdateApproval(int approvalId, bool? isEmailSent, bool? isSMSSent)
         {
