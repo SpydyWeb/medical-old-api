@@ -74,3 +74,5 @@ C:\Users\spydy\source\repos\medical old\DataAccessLayer\obj\Release\net6.0\DataA
 C:\Users\spydy\source\repos\medical old\DataAccessLayer\obj\Release\net6.0\refint\DataAccessLayer.dll
 C:\Users\spydy\source\repos\medical old\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.pdb
 C:\Users\spydy\source\repos\medical old\DataAccessLayer\obj\Release\net6.0\ref\DataAccessLayer.dll
+C:\Users\spydy\source\repos\medical old\DataAccessLayer\bin\Release\net6.0\DataAccessLayer.runtimeconfig.json
+C:\Users\spydy\source\repos\medical old\DataAccessLayer\obj\Release\net6.0\DataAccessLayer.genruntimeconfig.cache

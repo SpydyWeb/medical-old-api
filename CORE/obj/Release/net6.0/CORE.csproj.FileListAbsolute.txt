@@ -59,3 +59,5 @@ C:\Users\spydy\source\repos\medical old\CORE\obj\Release\net6.0\CORE.dll
 C:\Users\spydy\source\repos\medical old\CORE\obj\Release\net6.0\refint\CORE.dll
 C:\Users\spydy\source\repos\medical old\CORE\obj\Release\net6.0\CORE.pdb
 C:\Users\spydy\source\repos\medical old\CORE\obj\Release\net6.0\ref\CORE.dll
+C:\Users\spydy\source\repos\medical old\CORE\bin\Release\net6.0\CORE.runtimeconfig.json
+C:\Users\spydy\source\repos\medical old\CORE\obj\Release\net6.0\CORE.genruntimeconfig.cache

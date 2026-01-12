@@ -767,7 +767,6 @@ namespace InsuranceAPIs.SMEAPIs
                                 QuoteNo = quotationNo
 
 
-
                             };
                             //_Business.PentaDeatilsGet(PentaDetails);
                             using (var context = new testDBContext())
@@ -1119,13 +1118,6 @@ namespace InsuranceAPIs.SMEAPIs
 
             try
             {
-
-
-
-
-
-
-
                 using (var context = new testDBContext())
                 {
 
@@ -1136,10 +1128,6 @@ namespace InsuranceAPIs.SMEAPIs
     .Where(p => p.QuotationNumber == policy.SeqmentCode)
     .Select(p => p.QuoteNo)
     .FirstOrDefault();
-
-
-
-
                     issuePolicyRequest.quotationNo = quoteNo;
                     receiptDetails.proposalNo = "P02050987";
                     //receiptDetails.instrumentType = CallLookuptableAsync("NLINSTRUMENT_LOV", "NLINSTRUMENT_LOV", "IssuePolicy", _appSettings.pentadetails.PentaTokenUrl, _appSettings.pentadetails.Username, _appSettings.pentadetails.Password, _appSettings.pentadetails.lookupUrl).GetAwaiter().GetResult(); ;
@@ -1163,6 +1151,8 @@ namespace InsuranceAPIs.SMEAPIs
                         {
 
                             _Business.UpdateEskaSegmentCode(policy.SeqmentCode, segment);
+                            finalSaveResponse.status = true;
+                            finalSaveResponse.errorMessage = JsonConvert.SerializeObject(issuePolicyResponse);
                         }
 
                         if (issuePolicyResponse != null)
@@ -1386,6 +1376,8 @@ namespace InsuranceAPIs.SMEAPIs
                                 ErrorHandler.WriteLog(JsonConvert.SerializeObject(memberAdditionApiResponse), "Log6", "insideContext", _appSettings.pentadetails.endorsmentUrl);
                                 if (memberAdditionApiResponse != null && memberAdditionApiResponse.errors.Count<=0)
                                 {
+                                    finalSaveResponse.status = true;
+                                    finalSaveResponse.errorMessage = memberAdditionApiResponse.returnValue.memberAdditionDetails.referenceQuotationNo;
                                     ErrorHandler.WriteLog("", "Lo3", "", "Request2");
                                     var pentaRecord = context.PentaDetails
                                                     .Where(p => Convert.ToInt16(p.QuoteId) == Policies[0].CustomerId)

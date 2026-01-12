@@ -59,3 +59,5 @@ C:\Users\spydy\source\repos\medical old\SharedDomain\obj\Release\net6.0\SharedDo
 C:\Users\spydy\source\repos\medical old\SharedDomain\obj\Release\net6.0\refint\SharedDomain.dll
 C:\Users\spydy\source\repos\medical old\SharedDomain\obj\Release\net6.0\SharedDomain.pdb
 C:\Users\spydy\source\repos\medical old\SharedDomain\obj\Release\net6.0\ref\SharedDomain.dll
+C:\Users\spydy\source\repos\medical old\SharedDomain\bin\Release\net6.0\SharedDomain.runtimeconfig.json
+C:\Users\spydy\source\repos\medical old\SharedDomain\obj\Release\net6.0\SharedDomain.genruntimeconfig.cache

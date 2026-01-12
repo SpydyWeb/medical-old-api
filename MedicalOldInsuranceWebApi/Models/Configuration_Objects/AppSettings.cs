@@ -164,6 +164,7 @@ namespace InsuranceAPIs.Models.Configuration_Objects
             public string Username { get; set; }
             public string Password { get; set; }
             public string endorsmentUrl { get; set; }
+            public string reportUrl { get; set; }
 
         }
 

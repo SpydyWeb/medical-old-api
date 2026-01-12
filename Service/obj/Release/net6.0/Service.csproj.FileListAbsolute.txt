@@ -114,3 +114,5 @@ C:\Users\spydy\source\repos\medical old\Service\obj\Release\net6.0\Service.dll
 C:\Users\spydy\source\repos\medical old\Service\obj\Release\net6.0\refint\Service.dll
 C:\Users\spydy\source\repos\medical old\Service\obj\Release\net6.0\Service.pdb
 C:\Users\spydy\source\repos\medical old\Service\obj\Release\net6.0\ref\Service.dll
+C:\Users\spydy\source\repos\medical old\Service\bin\Release\net6.0\Service.runtimeconfig.json
+C:\Users\spydy\source\repos\medical old\Service\obj\Release\net6.0\Service.genruntimeconfig.cache

@@ -1925,7 +1925,7 @@ namespace InsuranceAPIs.Controllers
             return Results;
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("RemovePolicySME")]
         public CORE.DTOs.APIs.Unified_Response.Results RemovePolicySME([FromBody] PolicyIdInput input)
         {
@@ -1934,16 +1934,16 @@ namespace InsuranceAPIs.Controllers
             try
             {
                 Results.status = _svcBusiness.DeletePolicyBusiness(input.PolicyId);
-                if (input.EskaId > 0)
-                {
-                    DeletePolicyResponse deletePolicyResponse = new DeletePolicyResponse();
-                    deletePolicyResponse = sMECoreServices.DeletePolicy(input.EskaId.ToString());
-                    if (deletePolicyResponse != null && deletePolicyResponse.deletePolicyDataResult != null && deletePolicyResponse.deletePolicyDataResult.status != null)
-                    {
-                        Results.status = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1;
-                        Results.message = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1 ? "" : deletePolicyResponse.deletePolicyDataResult.status.reason;
-                    }
-                }
+                //if (input.EskaId > 0)
+                //{
+                //    DeletePolicyResponse deletePolicyResponse = new DeletePolicyResponse();
+                //    deletePolicyResponse = sMECoreServices.DeletePolicy(input.EskaId.ToString());
+                //    if (deletePolicyResponse != null && deletePolicyResponse.deletePolicyDataResult != null && deletePolicyResponse.deletePolicyDataResult.status != null)
+                //    {
+                //        Results.status = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1;
+                //        Results.message = deletePolicyResponse.deletePolicyDataResult.status.statusCode == 1 ? "" : deletePolicyResponse.deletePolicyDataResult.status.reason;
+                //    }
+                //}
                 if (Results.status)
                 {
                     Results.ResponseDate = DateTime.Now;
@@ -2113,6 +2113,7 @@ namespace InsuranceAPIs.Controllers
                     results.httpStatusCode = HttpStatusCode.OK;
                     results.ResponseDate = DateTime.Now;
                     results.status = true;
+                    results.message = finalSaveResponse.errorMessage;
                 }
                 else
                 {
@@ -2147,7 +2148,13 @@ namespace InsuranceAPIs.Controllers
             {
                 SMECoreServices sMECoreServices = new SMECoreServices(_appSettings, _environment, _svcBusiness, _tracker, _CoreServices, _process, _User, configuration);
                 finalSaveResponse = sMECoreServices.PrepareAdditionalRequest(obj.Id);
-                
+                if (finalSaveResponse.status)
+                    result.httpStatusCode = HttpStatusCode.OK;
+                else
+                    result.httpStatusCode = HttpStatusCode.BadRequest;
+                result.ResponseDate = DateTime.Now;
+                result.status = finalSaveResponse.status;
+                result.message = finalSaveResponse.errorMessage;
             }
             catch (Exception ex)
             {

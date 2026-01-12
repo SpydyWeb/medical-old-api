@@ -59,3 +59,5 @@ C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Release\net6.0\Workflow
 C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Release\net6.0\refint\WorkflowCore.dll
 C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Release\net6.0\WorkflowCore.pdb
 C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Release\net6.0\ref\WorkflowCore.dll
+C:\Users\spydy\source\repos\medical old\WorkflowCore\bin\Release\net6.0\WorkflowCore.runtimeconfig.json
+C:\Users\spydy\source\repos\medical old\WorkflowCore\obj\Release\net6.0\WorkflowCore.genruntimeconfig.cache
